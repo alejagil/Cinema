@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cinema_AGV.Views.ConfirmacionPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout x:Name="peliculaStack">
+                <Image Source="{Binding Imagen}" WidthRequest="60" />
+                <Label Text="Pelicula"/>
+                <Label Text="{Binding Nombre, StringFormat='Titulo: {0:F0}'}"/>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Estreno: "/>
+                    <Label Text="{Binding FechaEstreno}"/>
+                </StackLayout>
+            </StackLayout>            
+            <StackLayout x:Name="layoutfuncion">
+                <Label Text="{Binding Cinema, StringFormat='Cinema: {0:F0}'}"/>
+                <Label Text="{Binding Sala, StringFormat='Sala: {0:F0}'}"/>
+                <Label Text="{Binding Ciudad, StringFormat='Ciudad: {0:F0}'}"/>
+                <Label Text="Tiquetes"/>
+                <Label Text="{Binding Precio, StringFormat='Precio: {0:F0}'}"/>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Cantidad: "/>
+                    <Label x:Name="lblcantidad" Text=""/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Total: "/>
+                    <Label x:Name="total"  Text=""/>
+                </StackLayout>
+                <Button Clicked="BtnConfirmar" Text="Finalizar Compra"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
